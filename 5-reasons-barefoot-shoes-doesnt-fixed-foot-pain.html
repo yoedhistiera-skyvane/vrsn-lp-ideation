@@ -7,9 +7,9 @@
 <meta name="description" content="Barefoot was right in theory and brutal in practice. Five physical causes of the pain, and the part of the [vrsn] Pain Relief Sneaker that answers each one. 100-Day At-Home Trial.">
 <meta property="og:title" content="5 Reasons Barefoot Shoes Didn't Fix Your Foot Pain">
 <meta property="og:description" content="Five physical causes, and the part of the shoe that answers each one. Causes, not features.">
-<meta property="og:image" content="https://yoedhistiera-skyvane.github.io/vrsn-lp-ideation/assets/img/hero-stairs.webp">
-<meta property="og:url" content="https://yoedhistiera-skyvane.github.io/vrsn-lp-ideation/5-reasons-barefoot-shoes-doesnt-fixed-foot-pain.html">
-<link rel="canonical" href="https://yoedhistiera-skyvane.github.io/vrsn-lp-ideation/5-reasons-barefoot-shoes-doesnt-fixed-foot-pain.html">
+<meta property="og:image" content="https://get.vrsn.co/adv/barefoot/assets/img/hero-stairs.webp">
+<meta property="og:url" content="https://get.vrsn.co/adv/barefoot">
+<link rel="canonical" href="https://get.vrsn.co/adv/barefoot">
 <link rel="preload" as="image" href="assets/img/hero-stairs.webp" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="assets/fonts/Silka-Bold_b0300522.woff" crossorigin>
 <link rel="preload" as="font" type="font/woff" href="assets/fonts/Silka-Regular_c9082904.woff" crossorigin>
@@ -520,7 +520,7 @@ p{margin:0}
       <button class="cta wide order-btn" type="button" onclick="checkout()">Order Now</button>
       <div class="order-meta">
         <div><i class="ic"><svg><use href="#i-shield"/></svg></i>100-Day At-Home Trial</div>
-        <div><i class="ic"><svg><use href="#i-truck"/></svg></i>Free shipping</div>
+        <div><i class="ic"><svg><use href="#i-truck"/></svg></i>Ships by <b data-shipby></b> &mdash; free shipping</div>
         <div><i class="ic"><svg><use href="#i-refresh"/></svg></i>Free returns and exchanges</div>
       </div>
     </div>
@@ -569,7 +569,7 @@ p{margin:0}
       <details><summary>Will this help with Achilles tendon pain from barefoot shoes?<i class="ic"><svg><use href="#i-chev"/></svg></i></summary><p>The contoured arch and dual-density midsole redistribute pressure away from the Achilles tendon. Try them on the floors that hurt: the 100-day trial covers it.</p></details>
       <details><summary>Are your shoes podiatrist-recommended?<i class="ic"><svg><use href="#i-chev"/></svg></i></summary><p>Yes. We developed these shoes with input from over 30 podiatrists and pedorthists. They include the features foot specialists consistently recommend: shock absorption, subtle arch support, breathable materials, a flexible toe box and a stable structure.</p></details>
       <details><summary>Can I return or exchange my shoes if they don't fit?<i class="ic"><svg><use href="#i-chev"/></svg></i></summary><p>Yes. Return or exchange within the 100-day at-home trial. Wear them as much as you like, and if they are not right we take them back for a full refund. Returns are free.</p></details>
-      <details><summary>How long does shipping take?<i class="ic"><svg><use href="#i-chev"/></svg></i></summary><p>Orders are processed within 1 to 2 business days. After shipping, delivery usually takes 5 to 8 business days for US orders and 8 to 14 business days internationally. Shipping is free on every order.</p></details>
+      <details><summary>How long does shipping take?<i class="ic"><svg><use href="#i-chev"/></svg></i></summary><p>US orders ship within 1-2 business days and typically arrive in 4-6 business days. Free standard shipping is included on every order.</p></details>
     </div>
   </div>
 </section>
@@ -586,7 +586,7 @@ p{margin:0}
 </footer>
 
 <div class="sticky" id="stickybar" aria-hidden="true">
-  <div><div class="p"><span id="spnow">$79.00</span><s id="spwas">$129.00</s></div><div class="sub">100-Day Trial. Free returns.</div></div>
+  <div><div class="p"><span id="spnow">$79.00</span><s id="spwas">$129.00</s><span id="spz" hidden style="background:#B8DE55;color:#141414;font-size:10px;font-weight:700;padding:2px 6px;border-radius:6px;vertical-align:middle;margin-left:6px;text-transform:uppercase;letter-spacing:.06em"></span></div><div class="sub">100-Day Trial. Free returns.</div></div>
   <a class="cta" href="#order">Get Up To 47% Off</a>
 </div>
 
@@ -608,6 +608,12 @@ var COLKEY={White:'White',Navy:'Navy',Beige:'Beige',Black:'All Black'};
 var COLHEX={White:'#F4F4F2',Navy:'#1F2A4A',Beige:'#D9C7A8',Black:'#1A1A1A'};
 var MSIZES=[{k:'M4/W6',w:'6',m:'4'},{k:'M5/W7',w:'7',m:'5'},{k:'M6/W8',w:'8',m:'6'},{k:'M7/W8.5',w:'8.5',m:'7'},{k:'M8/W9-9.5',w:'9-9.5',m:'8'},{k:'M9/W10-10.5',w:'10-10.5',m:'9'},{k:'M10/W11-11.5',w:'11-11.5',m:'10'},{k:'M11/W12-12.5',w:'12-12.5',m:'11'}];
 var TWO_PAIR_CODE='VWC7K68PHFQX';
+/* Prize draw (see /adv/prize-draw.js, shared with the main PDP): order-level 10% code, stacks after the bundle code.
+   Displayed == charged: render() repaints prices x0.9 while a prize is live, cartUrl() appends the code. */
+function vrsnPrize(){try{var r=JSON.parse(localStorage.getItem('vrsn_prize_v1')||'null');if(r&&r.code&&typeof r.pct==='number'&&r.expiresAt&&Date.now()<r.expiresAt)return r;}catch(e){}return null;}
+/* Ship-by date: same computation as the PDP (client/src/config/bFunnel.config.ts getShipByDate, order + 7 days). */
+function shipByDate(){var d=new Date();d.setDate(d.getDate()+7);var days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],n=d.getDate();var s=n%10===1&&n!==11?'st':n%10===2&&n!==12?'nd':n%10===3&&n!==13?'rd':'th';return days[d.getDay()]+', '+months[d.getMonth()]+' '+n+s}
+function fillShipBy(){document.querySelectorAll('[data-shipby]').forEach(function(e){e.textContent=shipByDate()})}
 var STATE={pairs:1,c1:'White',c2:'White',s1:'',s2:'',g1:'women',g2:'women',ins:false,touched2:false};
 function vid(size,colour){return VMAP[size+'-'+COLKEY[colour]]||''}
 function money(n){return '$'+n.toFixed(2)}
@@ -623,9 +629,15 @@ function render(){
  document.querySelectorAll('.pair').forEach(function(e){e.classList.toggle('on',+e.dataset.p===STATE.pairs)});
  document.getElementById('cfg2').hidden=STATE.pairs!==2;
  var each=STATE.pairs===2?P2:P1,tot=each*STATE.pairs+(STATE.ins?INS:0),was=WAS*STATE.pairs+(STATE.ins?39:0);
+ var pz=vrsnPrize();if(pz)tot=Math.round(tot*(100-pz.pct))/100;
  document.getElementById('pnow').textContent=money(tot);document.getElementById('pwas').textContent=money(was);
  document.getElementById('psave').textContent='Save '+Math.round((1-tot/was)*100)+'%';
  document.getElementById('spnow').textContent=money(tot);document.getElementById('spwas').textContent=money(was);
+ document.querySelectorAll('.pair').forEach(function(card){var p=+card.dataset.p;if(!p)return;var b=card.querySelector('.vrsn-pz-line');
+  if(pz){var pt=Math.round((p===2?P2:P1)*p*(100-pz.pct))/100;if(!b){b=document.createElement('div');b.className='vrsn-pz-line';b.style.cssText='font-size:12px;font-weight:700;color:#5a7a2a;margin-top:4px;white-space:nowrap';card.appendChild(b)}b.textContent='Extra '+pz.pct+'% \u2192 '+money(pt)}
+  else if(b)b.remove()});
+ var chip=document.getElementById('spz');if(chip){chip.hidden=!pz;if(pz)chip.textContent='Extra '+pz.pct+'%'}
+ fillShipBy();
  document.getElementById('colname1').textContent=STATE.c1;document.getElementById('colname2').textContent=STATE.c2;
  var im=document.getElementById('galimg'),th=document.getElementById('galth0');
  var src='assets/img/pdp-'+STATE.c1.toLowerCase()+'-side.webp';th.src=src;
@@ -643,15 +655,16 @@ function cartUrl(){
  if(STATE.ins){var ins=INSMAP[STATE.s1];if(ins)items[ins]=1}
  var path=Object.keys(items).map(function(id){return id+':'+items[id]}).join(',');
  var u=new URL('https://vrsn.co/cart/'+path);
- u.searchParams.set('utm_source','skyvane');u.searchParams.set('utm_medium','get.vrsn.co');u.searchParams.set('utm_campaign','barefoot-5-reasons');
- if(STATE.pairs===2)u.searchParams.set('discount',TWO_PAIR_CODE);
+ u.searchParams.set('utm_source','skyvane');u.searchParams.set('utm_medium','get.vrsn.co');u.searchParams.set('utm_campaign','adv-barefoot');
+ var codes=[];if(STATE.pairs===2)codes.push(TWO_PAIR_CODE);var pz=vrsnPrize();if(pz)codes.push(pz.code);
+ if(codes.length)u.searchParams.set('discount',codes.join(','));
  new URLSearchParams(window.location.search).forEach(function(v,k){u.searchParams.set(k,v)});
  return u.toString()}
 function checkout(){
  if(!STATE.s1){needSize(document.getElementById('sg1'));return}
  if(STATE.pairs===2&&!STATE.s2){needSize(document.getElementById('sg2'));return}
  var url=cartUrl()||VURL;
- var tot=(STATE.pairs===2?P2:P1)*STATE.pairs+(STATE.ins?INS:0);
+ var tot=(STATE.pairs===2?P2:P1)*STATE.pairs+(STATE.ins?INS:0);var pz=vrsnPrize();if(pz)tot=Math.round(tot*(100-pz.pct))/100;
  if(typeof fbq==='function'){try{fbq('track','AddToCart',{content_type:'product',content_ids:[vid(STATE.s1,STATE.c1)],value:tot,currency:'USD',num_items:STATE.pairs})}catch(e){}}
  window.location.href=url}
 
@@ -673,5 +686,8 @@ document.getElementById('galthumbs').addEventListener('click',function(e){
 render();
 try{fbq('track','ViewContent',{content_ids:[vid('M6/W8','White')],content_name:'VRSN Pain Relief Sneaker',content_type:'product',value:79,currency:'USD'})}catch(e){}
 </script>
+<!-- "Try your luck" prize draw, shared with the main PDP and the other /adv/ pages (same storage keys, 10%, 30-min TTL,
+     fires 5s after the offer block is reached). Skipped on the github.io preview: that origin cannot hand the prize to /b. -->
+<script>if(!/github\.io$/.test(location.hostname)){var _pz=document.createElement('script');_pz.src='/adv/prize-draw.js';document.head.appendChild(_pz)}</script>
 </body>
 </html>
