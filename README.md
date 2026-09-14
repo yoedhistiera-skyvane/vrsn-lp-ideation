@@ -54,13 +54,13 @@ Requires a Gemini API key at `~/.gemini_key`.
 
 Two Skyvane advertorials built in this repo are deployed on get.vrsn.co from
 the `vrsn-lp` repo (`client/public/adv/<slug>/index.html`, Vercel rewrite in
-`vercel.json`). The files here are the source; the GitHub Pages copies are
-previews only (the prize-draw pop-up is skipped on github.io because that
+`vercel.json`). The copies in `vrsn-lp` are now the source of truth (edit them there); the
+files here and the GitHub Pages copies are previews only (the prize-draw pop-up is skipped on github.io because that
 origin cannot hand the prize to /b).
 
 | Source file | Live URL |
 |---|---|
-| `5-reasons-barefoot-shoes-doesnt-fixed-foot-pain.html` | https://get.vrsn.co/adv/barefoot |
+| `5-reasons-barefoot-shoes-doesnt-fixed-foot-pain.html` | https://get.vrsn.co/reasons/5-reasons-barefoot-shoes-didnt-fix-your-foot-pain |
 | `i-bought-my-mom-6-pairs-caregiver.html` | https://get.vrsn.co/adv/caregiver |
 
 Shipping copy on both follows the PDP (`/b`): "Ships by <order + 7 days> — free
