@@ -179,6 +179,32 @@ p{margin:0}
 .gal-t.photo img{object-fit:cover;width:100%;height:100%}
 .gal-t.on{border-color:var(--ink)}
 .gal-t img{width:100%;height:100%;object-fit:contain}
+/* ---------- gallery, ported from get.vrsn.co/b (same slides, overlays and thumb tags) ---------- */
+.gal-main{aspect-ratio:1/1;background:var(--bone)}
+.gal-stage{position:absolute;inset:0}
+.gal-stage>img,.gal-stage>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+.gal-stage>img.contain{object-fit:contain;background:var(--bone)}
+.gal-stage.zoom>video,.gal-stage.zoom>img{transform:scale(1.42)}
+.ov{position:absolute;inset:0;pointer-events:none;font-family:var(--font,Silka,Figtree,sans-serif)}
+.ov .lbl{position:absolute;left:18px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.8)}.ov .lbl b{display:block;font-size:15px;text-transform:uppercase;letter-spacing:.04em;line-height:1.1}.ov .lbl span{font-size:12px;opacity:.85;line-height:1.3}
+.ov .lbl.t{top:18px}.ov .lbl.m{top:50%;transform:translateY(-50%)}.ov .lbl.b{bottom:18px}
+.ov .shade-t{position:absolute;inset:0 0 auto 0;height:45%;background:linear-gradient(rgba(0,0,0,.55),transparent)}.ov .shade-b{position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(transparent,rgba(0,0,0,.7))}.ov .shade-l{position:absolute;inset:0 auto 0 0;width:45%;background:linear-gradient(90deg,rgba(0,0,0,.28),transparent)}
+.ov .head{position:absolute;top:0;left:0;right:0;padding:20px 22px;color:#fff}.ov .head h3{font-size:clamp(22px,4.5vw,32px);font-weight:700;line-height:1.1;text-transform:none;letter-spacing:-.01em}.ov .head h3 .u{background:linear-gradient(transparent 70%,var(--lime) 70%)}.ov .head p{margin-top:8px;font-size:14px;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,.7)}
+.ov .arc{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:14px;font-weight:500;color:rgba(255,255,255,.92)}.ov .arc i{color:var(--lime);font-style:normal}
+.ov .pill{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:#111;color:#fff;border-radius:999px;padding:8px 16px;font-size:11px;white-space:nowrap}.ov .pill b{color:var(--lime);text-transform:uppercase;letter-spacing:.06em}
+.ov .foot{position:absolute;bottom:0;left:0;right:0;padding:20px 22px;color:#fff}.ov .foot .stars{color:#F59E0B;font-size:16px;letter-spacing:2px}.ov .foot p{font-size:17px;font-weight:700;line-height:1.3;max-width:420px;text-shadow:0 1px 6px rgba(0,0,0,.7);margin-top:6px}.ov .foot small{display:block;margin-top:8px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.ov .vs-top{position:absolute;top:14px;left:0;right:0;display:flex}.ov .vs-top span{flex:1;text-align:center;color:#fff;font-weight:700;font-size:17px;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.ov .vs-bot{position:absolute;bottom:14px;left:12px;right:12px;display:flex;gap:8px}.ov .vs-bot div{flex:1;background:rgba(255,255,255,.92);border-radius:12px;padding:8px 6px;text-align:center;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.ov .vs-bot .bad{color:var(--coral)}.ov .vs-bot .good{color:#5a8a00}.ov .vs-bot small{display:block;font-size:9px;font-weight:600;text-transform:none;letter-spacing:0;margin-bottom:2px}
+.ov .chips{position:absolute;bottom:14px;left:12px;right:12px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.ov .chips div{background:rgba(255,255,255,.94);border-radius:10px;padding:8px 10px;font-size:11px;font-weight:600;line-height:1.25;color:var(--ink)}
+.zones{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;padding:6px;background:var(--bone)}.zones div{position:relative;border-radius:12px;overflow:hidden;background:#fff}.zones img{width:100%;height:100%;object-fit:cover}.zones p{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:10px;line-height:1.25}.zones p b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.zones p i{font-style:normal;color:var(--lime);font-weight:700}
+.expert{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;background:linear-gradient(135deg,#f0f7ff,#e8f0fe)}.expert .tag{display:inline-flex;align-items:center;gap:8px;color:#2563eb;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px}.expert .tag i{display:inline-flex;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;align-items:center;justify-content:center;font-style:normal;font-size:14px}.expert q{display:block;font-size:clamp(15px,2.6vw,19px);font-weight:600;line-height:1.35;color:var(--ink);max-width:420px;quotes:"\201C" "\201D"}.expert .who{display:flex;align-items:center;gap:10px;margin-top:16px;text-align:left}.expert .who img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(37,99,235,.2)}.expert .who b{display:block;font-size:13px}.expert .who span{font-size:11px;color:#666}
+.vs{position:absolute;inset:0;display:flex}.vs>div{flex:1;overflow:hidden}.vs>div:first-child{background:#F7F0EC}.vs>div:last-child{background:#111}.vs img{width:100%;height:100%;object-fit:cover}.vs .disc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid var(--coral);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+.gal-thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}.gal-thumbs::-webkit-scrollbar{display:none}
+.gal-t{position:relative;flex:0 0 64px;width:64px;height:64px;border-radius:10px;overflow:hidden;border:2px solid transparent;background:var(--bone);padding:0;cursor:pointer}.gal-t.on{border-color:var(--ink)}.gal-t img{width:100%;height:100%;object-fit:cover}.gal-t .tg{position:absolute;right:0;bottom:0;background:rgba(0,0,0,.8);color:#fff;font-size:8px;font-weight:600;padding:2px 5px;border-radius:6px 0 0 0;line-height:1.2}.gal-t .tg.c{background:rgba(243,109,78,.9)}.gal-t .tg.g{background:rgba(90,122,42,.9)}.gal-t .tg.b{background:rgba(29,78,216,.9)}
+/* trust seal */
+.seal{display:block;width:100%;height:auto}.gal-trial{background:none;box-shadow:none;padding:0;width:92px;right:12px;top:12px}.trial-big .seal{width:min(300px,72vw);margin:0 auto}
+@media (prefers-reduced-motion:reduce){.gal-stage>video{display:none}.gal-stage>img.poster{display:block}}
+
 .pdp-rating{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:15px;font-weight:500}
 .pdp-rating .stars{display:inline-flex;color:var(--coral)}
 .pdp-rating .stars .ic{width:18px;height:18px}
@@ -479,15 +505,10 @@ p{margin:0}
   <div class="wrap order-grid">
     <div class="gal">
       <div class="gal-main" id="galmain">
-        <img id="galimg" src="assets/img/pdp-white-side.webp" alt="[vrsn] Pain Relief Sneaker, white" width="1000" height="433">
-        <div class="gal-trial" aria-hidden="true"><div class="a">The</div><div class="b">100</div><div class="c">Day Trial</div></div>
+        <div class="gal-stage" id="galstage"></div>
+        <div class="gal-trial" aria-hidden="true"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealpath" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><circle cx="100" cy="100" r="98" fill="#141414"/><circle cx="100" cy="100" r="90" fill="none" stroke="#B8DE55" stroke-width="1.5" stroke-dasharray="2 5"/><text font-family="Silka,Figtree,sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.6" fill="#ffffff"><textPath href="#sealpath">100-DAY AT-HOME TRIAL &#8226; FREE RETURNS &#8226; FREE EXCHANGES &#8226;</textPath></text><circle cx="100" cy="100" r="58" fill="#B8DE55"/><text x="100" y="101" text-anchor="middle" font-family="Silka,Figtree,sans-serif" font-size="46" font-weight="700" letter-spacing="-2" fill="#141414">100</text><text x="100" y="121" text-anchor="middle" font-family="Silka,Figtree,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#141414">DAYS</text><path d="M89 136l7 7 15-15" fill="none" stroke="#141414" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
-      <div class="gal-thumbs" id="galthumbs">
-        <button class="gal-t on" type="button" data-kind="colour" aria-label="Side view"><img id="galth0" src="assets/img/pdp-white-side.webp" alt="" loading="lazy"></button>
-        <button class="gal-t" type="button" data-src="assets/img/pdp-outsole.webp" aria-label="Outsole"><img src="assets/img/pdp-outsole.webp" alt="" loading="lazy"></button>
-        <button class="gal-t" type="button" data-src="assets/img/pdp-flex.webp" aria-label="Flex"><img src="assets/img/pdp-flex.webp" alt="" loading="lazy"></button>
-        <button class="gal-t photo" type="button" data-src="assets/img/midstep-outsole.webp" data-photo="1" aria-label="On stairs"><img src="assets/img/midstep-outsole.webp" alt="" loading="lazy"></button>
-      </div>
+      <div class="gal-thumbs" id="galthumbs" role="tablist" aria-label="Gallery"></div>
     </div>
 
     <div id="selwrap">
@@ -559,7 +580,7 @@ p{margin:0}
 <!-- ================= GUARANTEE ================= -->
 <section class="sec guar" id="trial">
   <div class="wrap guar-grid">
-    <div class="trial-big" aria-hidden="true"><div class="a">The</div><div class="b">100</div><div class="c">Day At-Home Trial</div></div>
+    <div class="trial-big" aria-hidden="true"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealpath" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><circle cx="100" cy="100" r="98" fill="#141414"/><circle cx="100" cy="100" r="90" fill="none" stroke="#B8DE55" stroke-width="1.5" stroke-dasharray="2 5"/><text font-family="Silka,Figtree,sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.6" fill="#ffffff"><textPath href="#sealpath">100-DAY AT-HOME TRIAL &#8226; FREE RETURNS &#8226; FREE EXCHANGES &#8226;</textPath></text><circle cx="100" cy="100" r="58" fill="#B8DE55"/><text x="100" y="101" text-anchor="middle" font-family="Silka,Figtree,sans-serif" font-size="46" font-weight="700" letter-spacing="-2" fill="#141414">100</text><text x="100" y="121" text-anchor="middle" font-family="Silka,Figtree,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#141414">DAYS</text><path d="M89 136l7 7 15-15" fill="none" stroke="#141414" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div>
       <h2>Just try them. At home. For 100 days.</h2>
       <p>Buying shoes online is a leap, and switching out of barefoot is a bigger one. So you get a <b>100-day at-home trial</b> with every order.</p>
@@ -650,9 +671,7 @@ function render(){
  var chip=document.getElementById('spz');if(chip){chip.hidden=!pz;if(pz)chip.textContent='Extra '+pz.pct+'%'}
  fillShipBy();
  document.getElementById('colname1').textContent=STATE.c1;document.getElementById('colname2').textContent=STATE.c2;
- var im=document.getElementById('galimg'),th=document.getElementById('galth0');
- var src='assets/img/pdp-'+STATE.c1.toLowerCase()+'-side.webp';th.src=src;
- var on=document.querySelector('.gal-t.on');if(on&&on.dataset.kind==='colour'){im.src=src;im.alt='[vrsn] Pain Relief Sneaker, '+STATE.c1.toLowerCase()}
+ if(typeof SLIDES!=='undefined'){var th0=document.querySelector('.gal-t img');if(th0)th0.src=colourSrc();if(STATE.slide===0)showSlide(0)}
  renderSwatches(1);renderSwatches(2);renderSizes(1);renderSizes(2);renderTabs(1);renderTabs(2);
 }
 function pick(p){STATE.pairs=p;if(p===2&&!STATE.touched2){STATE.c2=STATE.c1;STATE.s2=STATE.s1;STATE.g2=STATE.g1}render()}
@@ -679,14 +698,39 @@ function checkout(){
  if(typeof fbq==='function'){try{fbq('track','AddToCart',{content_type:'product',content_ids:[vid(STATE.s1,STATE.c1)],value:tot,currency:'USD',num_items:STATE.pairs})}catch(e){}}
  window.location.href=url}
 
-/* gallery */
-document.getElementById('galthumbs').addEventListener('click',function(e){
- var b=e.target.closest('.gal-t');if(!b)return;
- document.querySelectorAll('.gal-t').forEach(function(t){t.classList.toggle('on',t===b)});
- var im=document.getElementById('galimg'),main=document.getElementById('galmain');
- if(b.dataset.kind==='colour'){im.src='assets/img/pdp-'+STATE.c1.toLowerCase()+'-side.webp';main.classList.remove('photo')}
- else{im.src=b.dataset.src;main.classList.toggle('photo',!!b.dataset.photo)}
- im.alt=b.getAttribute('aria-label')});
+var IMGBASE='assets/img/';
+/* gallery: the get.vrsn.co/b slides, rendered statically. Slide 0 is the colour shot the swatches drive. */
+var A='https://get.vrsn.co/assets/';
+var SLIDES=[
+ {k:'colour',tag:'5-star'},
+ {k:'video',tag:'comfort',src:A+'migrated/vrsn-usecase-walk.mp4',poster:A+'migrated/vrsn-usecase-walk-poster.webp',zoom:true,ov:'comfort'},
+ {k:'video',tag:'video',src:A+'migrated/vrsn-slipon-close.mp4',poster:A+'migrated/vrsn-slipon-close-poster.webp',ov:'relief'},
+ {k:'video',tag:'washable',src:A+'b/b-gallery-stain.mp4',poster:A+'b/b-gallery-stain-thumb.jpg',ov:'washable'},
+ {k:'image',tag:'posture',tagc:'b',src:A+'migrated/posture-comparison-clean.webp',ov:'posture'},
+ {k:'zones',tag:'relief',tagc:'c',thumb:A+'migrated/foot-pain-plantar-VCdbZq9eTKmAAVqYWvMcKi.webp'},
+ {k:'image',tag:'insole',tagc:'c',src:A+'migrated/vrsn-insole-gallery_3244a507.webp'},
+ {k:'video',tag:'review',src:A+'migrated/vrsn-v2-beige-video_80475176.mp4',poster:A+'migrated/vrsn-beige-video-poster.webp',ov:'review'},
+ {k:'expert',tag:'expert',tagc:'g',thumb:A+'migrated/vrsn-validated-experts_5909a39c_c40aad33.webp'},
+ {k:'video',tag:'tech',src:A+'migrated/vrsn-twisting-shoes-v2_11a1f48a.mp4',poster:A+'migrated/vrsn-twisting-poster.webp',ov:'tech'},
+ {k:'vs',tag:'vs',thumb:A+'migrated/vs-standard-shoe-bfbm85v9wdE2L5GNM2BBsT.webp'}];
+var ZONES=[['foot-pain-achilles-2om8SaVQ8bdebBCA5MJ6Nw','Achilles Tendonitis','Cushioned Heel Support'],['foot-pain-heel-spurs-jLhuzg2qGHwSQJAUzGKxMm','Heel Spurs','Shock Absorption'],['foot-pain-plantar-VCdbZq9eTKmAAVqYWvMcKi','Plantar Fasciitis','Targeted Arch Relief'],['foot-pain-bunion-v2-LxTz9fJRhyqjb9Yjb96p5z','Bunions','Flexible, Roomy Fit']];
+var OV={comfort:'<div class="shade-l"></div><div class="lbl t"><b>Shock<br>Absorption</b><span>Protects joints<br>every step</span></div><div class="lbl m"><b>Builds Foot<br>Strength</b><span>Muscles activate<br>naturally</span></div><div class="lbl b"><b>Slip-Resistant<br>Base</b><span>Stable grip on<br>any surface</span></div>',
+ relief:'<div class="shade-t"></div><div class="head"><h3>Relief Today, <span class="u">Strength Tomorrow</span></h3><div class="arc">Slip on <i>&rarr;</i> Walk Naturally <i>&rarr;</i> Feel Stronger</div></div>',
+ washable:'<div class="shade-t"></div><div class="head"><h3>SPILLS? <span class="u">NO PROBLEM.</span></h3><p>Life happens. VRSN shrugs it off.</p></div><div class="pill"><b>Machine washable</b><span>Gentle cycle, cold water, air dry</span></div>',
+ posture:'<div class="vs-top"><span>Other shoes</span><span>VRSN</span></div><div class="vs-bot"><div class="bad"><small>&#9679; Misaligned</small>Pain &amp; Fatigue</div><div class="good"><small>&#9679; Aligned</small>Relief &amp; Strength</div></div>',
+ review:'<div class="shade-b"></div><div class="foot"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;They&rsquo;re so comfortable I forget I&rsquo;m even wearing them!&rdquo;</p><small>Olivia P. &nbsp;&#10003; Verified buyer</small></div>',
+ tech:'<div class="chips"><div>Relieves plantar fasciitis from step one</div><div>Comfort from the very first step</div><div>Wide toe box, standard on the 2.1</div><div>Podiatrist-approved pain relief</div></div>'};
+function colourSrc(){return IMGBASE+'pdp-'+STATE.c1.toLowerCase()+'-side.webp'}
+function renderThumbs(){var el=document.getElementById('galthumbs'),h='';SLIDES.forEach(function(s,i){var t=s.k==='colour'?colourSrc():(s.thumb||s.poster||s.src);h+='<button class="gal-t'+(i===STATE.slide?' on':'')+'" type="button" role="tab" aria-label="'+s.tag+'" onclick="showSlide('+i+')"><img src="'+t+'" alt="" loading="lazy"><span class="tg '+(s.tagc||'')+'">'+s.tag+'</span></button>'});el.innerHTML=h}
+function showSlide(i){STATE.slide=i;var s=SLIDES[i],st=document.getElementById('galstage'),h='';st.className='gal-stage'+(s.zoom?' zoom':'');
+ if(s.k==='colour'){h='<img class="contain" src="'+colourSrc()+'" alt="[vrsn] Pain Relief Sneaker, '+STATE.c1.toLowerCase()+'">'}
+ else if(s.k==='video'){h='<video src="'+s.src+'" poster="'+s.poster+'" muted autoplay loop playsinline preload="metadata"></video>'+(s.ov?'<div class="ov">'+OV[s.ov]+'</div>':'')}
+ else if(s.k==='image'){h='<img src="'+s.src+'" alt="">'+(s.ov?'<div class="ov">'+OV[s.ov]+'</div>':'')}
+ else if(s.k==='zones'){h='<div class="zones">'+ZONES.map(function(z){return '<div><img src="'+A+'migrated/'+z[0]+'.webp" alt=""><p><b>'+z[1]+'</b><i>'+z[2]+'</i></p></div>'}).join('')+'</div>'}
+ else if(s.k==='expert'){h='<div class="expert"><div class="tag"><i>&#10003;</i>Podiatrist recommended</div><q>VRSN&rsquo;s design gives my patients immediate relief while letting their feet rebuild strength naturally. It&rsquo;s the first shoe I&rsquo;ve found that does both.</q><div class="who"><img src="'+A+'migrated/vrsn-validated-experts_5909a39c_c40aad33.webp" alt=""><div><b>Dr. D. Ashford, DPM</b><span>Doctor of Podiatric Medicine</span></div></div></div>'}
+ else if(s.k==='vs'){h='<div class="vs"><div><img src="'+A+'migrated/vs-standard-shoe-bfbm85v9wdE2L5GNM2BBsT.webp" alt=""></div><div><img src="'+A+'migrated/vrsn-sneaker-white_a4930346.webp" alt=""></div><div class="disc">VS</div></div>'}
+ st.innerHTML=h;document.querySelectorAll('.gal-t').forEach(function(b,j){b.classList.toggle('on',j===i)})}
+STATE.slide=0;renderThumbs();showSlide(0);
 
 /* sticky bar: IntersectionObserver, no scroll listener */
 (function(){var bar=document.getElementById('stickybar'),hero=document.getElementById('hero'),order=document.getElementById('order');

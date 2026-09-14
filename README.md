@@ -61,7 +61,7 @@ origin cannot hand the prize to /b).
 | Source file | Live URL |
 |---|---|
 | `5-reasons-barefoot-shoes-doesnt-fixed-foot-pain.html` | https://get.vrsn.co/reasons/5-reasons-barefoot-shoes-didnt-fix-your-foot-pain |
-| `i-bought-my-mom-6-pairs-caregiver.html` | https://get.vrsn.co/adv/caregiver |
+| `i-bought-my-mom-6-pairs-caregiver.html` | https://get.vrsn.co/stories/caregiver |
 
 Shipping copy on both follows the PDP (`/b`): "Ships by <order + 7 days> — free
 shipping" and the FAQ line "US orders ship within 1-2 business days and
