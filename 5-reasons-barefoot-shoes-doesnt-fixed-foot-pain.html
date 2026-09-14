@@ -3,13 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>5 Reasons Barefoot Shoes Didn't Fix Your Foot Pain | [vrsn]</title>
-<meta name="description" content="Barefoot was right in theory and brutal in practice. Five physical causes of the pain, and the part of the [vrsn] Pain Relief Sneaker that answers each one. 100-Day At-Home Trial.">
-<meta property="og:title" content="5 Reasons Barefoot Shoes Didn't Fix Your Foot Pain">
-<meta property="og:description" content="Five physical causes, and the part of the shoe that answers each one. Causes, not features.">
-<meta property="og:image" content="https://get.vrsn.co/reasons/5-reasons-barefoot-shoes-didnt-fix-your-foot-pain/assets/img/hero-stairs.webp">
-<meta property="og:url" content="https://get.vrsn.co/reasons/5-reasons-barefoot-shoes-didnt-fix-your-foot-pain">
+<title>5 Reasons Barefoot Shoes Didn't Fix Your Foot Pain | VRSN</title>
+<meta name="description" content="Barefoot was right in theory and brutal in practice. Five physical causes of the pain, and the part of the VRSN Pain Relief Sneaker that answers each one. 100-Day At-Home Trial, free shipping.">
 <link rel="canonical" href="https://get.vrsn.co/reasons/5-reasons-barefoot-shoes-didnt-fix-your-foot-pain">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VRSN">
+<meta property="og:url" content="https://get.vrsn.co/reasons/5-reasons-barefoot-shoes-didnt-fix-your-foot-pain">
+<meta property="og:title" content="5 Reasons Barefoot Shoes Didn't Fix Your Foot Pain">
+<meta property="og:description" content="Barefoot was right in theory and brutal in practice. Five physical causes of the pain, and the part of the VRSN Pain Relief Sneaker that answers each one. 100-Day At-Home Trial, free shipping.">
+<meta property="og:image" content="https://get.vrsn.co/reasons/5-reasons-barefoot-shoes-didnt-fix-your-foot-pain/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5 Reasons Barefoot Shoes Didn't Fix Your Foot Pain">
+<meta name="twitter:description" content="Barefoot was right in theory and brutal in practice. Five physical causes of the pain, and the part of the VRSN Pain Relief Sneaker that answers each one. 100-Day At-Home Trial, free shipping.">
+<meta name="twitter:image" content="https://get.vrsn.co/reasons/5-reasons-barefoot-shoes-didnt-fix-your-foot-pain/og.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="https://get.vrsn.co/assets/migrated/vrsn-favicon-32_b3ea17be.png">
 <link rel="icon" type="image/png" sizes="192x192" href="https://get.vrsn.co/assets/migrated/vrsn-favicon_cfc14392.png">
 <link rel="apple-touch-icon" href="https://get.vrsn.co/assets/migrated/vrsn-favicon_cfc14392.png">
@@ -687,10 +695,16 @@ document.getElementById('galthumbs').addEventListener('click',function(e){
  new IntersectionObserver(function(en){atOrder=en[0].isIntersecting;upd()},{threshold:0}).observe(order)})();
 
 render();
-try{fbq('track','ViewContent',{content_ids:[vid('M6/W8','White')],content_name:'VRSN Pain Relief Sneaker',content_type:'product',value:79,currency:'USD'})}catch(e){}
+/* Meta events (Neil): PageView on every page; ViewContent only on the PDP, which on this listicle is the
+   embedded order block, so it fires once #selwrap enters view rather than on landing; AddToCart on Order Now
+   (checkout()). Nothing after that: InitiateCheckout / Payment / Purchase belong to Shopify. */
+(function(){var el=document.getElementById('selwrap'),done=false;function vc(){if(done)return;done=true;
+ try{fbq('track','ViewContent',{content_ids:[vid('M6/W8',STATE.c1||'White')],content_name:'VRSN Pain Relief Sneaker',content_type:'product',value:79,currency:'USD'})}catch(e){}}
+ if(!el||!('IntersectionObserver' in window)){vc();return}
+ new IntersectionObserver(function(en,obs){for(var i=0;i<en.length;i++){if(en[i].isIntersecting){obs.disconnect();vc();break}}},{threshold:0,rootMargin:'0px 0px -20% 0px'}).observe(el)})();
 </script>
 <!-- "Try your luck" prize draw, shared with the main PDP and the other /adv/ pages (same storage keys, 10%, 30-min TTL,
      fires 5s after the offer block is reached). Skipped on the github.io preview: that origin cannot hand the prize to /b. -->
-<script>if(!/github\.io$/.test(location.hostname)){var _pz=document.createElement('script');_pz.src='/adv/prize-draw.js';document.head.appendChild(_pz)}</script>
+<script>if(!/github\.io$/.test(location.hostname)){var _pz=document.createElement('script');_pz.src='/adv/prize-draw.js?v=2';document.head.appendChild(_pz)}</script>
 </body>
 </html>
