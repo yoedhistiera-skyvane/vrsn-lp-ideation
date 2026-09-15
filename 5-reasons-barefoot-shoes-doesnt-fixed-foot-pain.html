@@ -179,6 +179,22 @@ p{margin:0}
 .gal-t.photo img{object-fit:cover;width:100%;height:100%}
 .gal-t.on{border-color:var(--ink)}
 .gal-t img{width:100%;height:100%;object-fit:contain}
+/* size guide (same chart and tips as get.vrsn.co/b) */
+.sg-link{background:none;border:0;padding:0;margin-left:8px;font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.sg-link.solo{margin:10px 0 0;display:inline-block}
+#sizeguide{border:0;padding:0;border-radius:var(--r-card);width:min(520px,calc(100vw - 32px));max-height:calc(100vh - 32px);box-shadow:var(--shadow-card);color:var(--ink);background:var(--white)}
+#sizeguide::backdrop{background:rgba(10,10,10,.55)}
+.sg-head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line)}.sg-head h3{font-size:20px;letter-spacing:-.01em}
+.sg-close{width:34px;height:34px;border-radius:50%;border:0;background:var(--bone);font-size:20px;line-height:1;cursor:pointer}
+.sg-body{padding:18px 22px 22px;overflow-y:auto;max-height:calc(100vh - 110px)}
+.sg-tabs{display:inline-flex;background:var(--bone);border-radius:999px;padding:4px;margin-bottom:12px}.sg-tabs button{border:0;background:none;font:inherit;font-size:14px;font-weight:600;padding:6px 18px;border-radius:999px;cursor:pointer;color:var(--muted)}.sg-tabs button.on{background:var(--ink);color:#fff}
+.sg-intro{font-size:14px;color:var(--muted)}
+.sg-tip{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-radius:12px;padding:12px 14px;margin:12px 0;font-size:14px;line-height:1.45}.sg-tip i{flex:none;color:var(--coral);font-style:normal}
+.sg-title{font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin:6px 0 8px}
+.sg-table{width:100%;border-collapse:collapse;font-size:15px}.sg-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.sg-table td{padding:9px 12px;border-bottom:1px solid var(--line)}.sg-table tr:nth-child(even) td{background:var(--bone)}
+.sg-true{margin-top:16px;background:var(--bone);border-radius:12px;padding:14px;font-size:14px;line-height:1.45}.sg-true b{display:block;font-size:15px;margin-bottom:4px}.sg-true b span{color:var(--coral)}
+.sg-contact{margin-top:12px;font-size:13px;color:var(--muted)}.sg-contact a{text-decoration:underline;text-underline-offset:3px}
+
 /* ---------- gallery, ported from get.vrsn.co/b (same slides, overlays and thumb tags) ---------- */
 .gal-main{aspect-ratio:1/1;background:var(--bone)}
 .gal-stage{position:absolute;inset:0}
@@ -538,13 +554,14 @@ p{margin:0}
         <div class="swatches" id="sw1"></div>
         <div class="gtabs" id="gt1"><button type="button" class="on" onclick="gender(1,'women')">Women</button><button type="button" onclick="gender(1,'men')">Men</button></div>
         <div class="sizes" id="sg1"></div>
-        <p class="size-note" id="sn1">US sizes. Women 6 to 12.5, Men 4 to 11. Between sizes? Take the size up. Exchanges are free.</p>
+        <p class="size-note" id="sn1">US sizes. Women 6 to 12.5, Men 4 to 11. Between sizes? Take the size up. Exchanges are free.<button type="button" class="sg-link" onclick="openSizeGuide(1)">See size guide</button></p>
       </div>
       <div class="cfg" id="cfg2" hidden>
         <h4>Pair 2 <span id="colname2">White</span></h4>
         <div class="swatches" id="sw2"></div>
         <div class="gtabs" id="gt2"><button type="button" class="on" onclick="gender(2,'women')">Women</button><button type="button" onclick="gender(2,'men')">Men</button></div>
         <div class="sizes" id="sg2"></div>
+        <button type="button" class="sg-link solo" onclick="openSizeGuide(2)">See size guide</button>
       </div>
 
       <label class="addon"><input type="checkbox" id="ins" onchange="STATE.ins=this.checked;render()"><div><b>Add Orthopedic Insoles 2.1, $23.40 (was $39)</b><span>Size-matched to pair 1. The soft-contoured footbed takes pressure off the heel.</span></div></label>
@@ -617,6 +634,17 @@ p{margin:0}
   </div>
 </footer>
 
+<dialog id="sizeguide" aria-labelledby="sg-h">
+  <div class="sg-head"><h3 id="sg-h">Shoe Size Guide</h3><button type="button" class="sg-close" onclick="document.getElementById('sizeguide').close()" aria-label="Close size guide">&times;</button></div>
+  <div class="sg-body">
+    <div class="sg-tabs" id="sg-tabs"><button type="button" onclick="sgRender('women')">Women</button><button type="button" onclick="sgRender('men')">Men</button></div>
+    <p class="sg-intro">Find your fit using the chart below (e.g. M7 = W8.5, M8 = W9-9.5).</p>
+    <div class="sg-tip"><i>&#9679;</i><p><b>Tip:</b> when between sizes, size up. The wide toe box gives your toes natural room to splay.</p></div>
+    <div id="sg-chart"></div>
+    <div class="sg-true"><b><span>VRSN</span> runs true to size</b>The wide toe box gives your toes natural room to splay without needing to size up. The knit upper adapts to your foot shape over the first few wears.</div>
+    <p class="sg-contact">Still unsure? <a href="mailto:hello@vrsn.co">Email hello@vrsn.co</a> and we will help you pick.</p>
+  </div>
+</dialog>
 <div class="sticky" id="stickybar" aria-hidden="true">
   <div><div class="p"><span id="spnow">$79.00</span><s id="spwas">$129.00</s><span id="spz" hidden style="background:#B8DE55;color:#141414;font-size:10px;font-weight:700;padding:2px 6px;border-radius:6px;vertical-align:middle;margin-left:6px;text-transform:uppercase;letter-spacing:.06em"></span></div><div class="sub">100-Day Trial. Free returns.</div></div>
   <a class="cta" href="#order">Get Up To 47% Off</a>
@@ -698,6 +726,13 @@ function checkout(){
  if(typeof fbq==='function'){try{fbq('track','AddToCart',{content_type:'product',content_ids:[vid(STATE.s1,STATE.c1)],value:tot,currency:'USD',num_items:STATE.pairs})}catch(e){}}
  window.location.href=url}
 
+/* size guide: the /b chart (SizeGuideModal.tsx), women and men, US/EU/UK */
+var SG={women:[['6','36.5','3.5'],['7','38','4.5'],['8','39','5.5'],['8.5','40','6'],['9-9.5','41','7'],['10-10.5','42','8'],['11-11.5','43','9'],['12-12.5','44','10']],
+        men:[['4','36.5','3.5'],['5','38','4.5'],['6','39','5.5'],['7','40','6'],['8','41','7'],['9','42','8'],['10','43','9'],['11','44','10']]};
+function sgRender(g){var rows=SG[g].map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>'}).join('');
+ document.getElementById('sg-chart').innerHTML='<div class="sg-title">'+(g==='women'?'Women':'Men')+'&rsquo;s sizes</div><table class="sg-table"><thead><tr><th>US</th><th>EU</th><th>UK</th></tr></thead><tbody>'+rows+'</tbody></table>';
+ var b=document.querySelectorAll('#sg-tabs button');b[0].classList.toggle('on',g==='women');b[1].classList.toggle('on',g==='men')}
+function openSizeGuide(n){sgRender((n===2?STATE.g2:STATE.g1)||'women');var d=document.getElementById('sizeguide');if(d.showModal)d.showModal();else d.setAttribute('open','')}
 var IMGBASE='assets/img/';
 /* gallery: the get.vrsn.co/b slides, rendered statically. Slide 0 is the colour shot the swatches drive. */
 var A='https://get.vrsn.co/assets/';
